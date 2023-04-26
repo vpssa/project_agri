@@ -1,7 +1,7 @@
 # project_agri
 developed by NodeJs, Express, MongoDb
 
-THIS SITE FULLY DYNAMIC 
+THIS SITE FULLY DYNAMIC and RESPONSIVE 
 USER CAN EDIT( by editing database ) SITE ACCORDING TO HIS NEED
 
 this is a industrial project..
