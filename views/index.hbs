@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>home page</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+
+<body>
+  {{>navbar data=details}}
+
+
+  {{>slider slides=slides}}
+
+  {{!-- banner1 section --}}
+  <section class="banner1_section background1 py-5">
+
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Start getting services from today !!</h1>
+          <p>
+            Just take a look towards our Gallery, we have many plants and different grasses which can beautify your
+            lawn/garden.
+            We design your lawn according to your choice, giving you the best suggestion with our experience. You can
+            take look at our
+            gallery section by clicking on button below.
+          </p>
+          <button class="btn btn-outline-primary"><a style="text-decoration: none;" href="/gallery">Gallery</a></button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  {{!-- !!!!!services section!!!!! --}}
+
+  <section id="services_section" class="py-3">
+    <div class="container">
+      <h1 class="text-center text-secondary py-3">Services that we provide</h1>
+
+      <div class="row ml-5">
+
+        {{!-- first services column --}}
+        {{#each services}}
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="container text-center service_icon py-2"><i class="{{this.icon}}"></i></div>
+              <h5>{{this.title}}</h5>
+              <p>{{this.descripition}}</p>
+              <a href="{{this.link}}">{{this.linkText}}</a>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  {{!-- banner2 section --}}
+
+  <section class="banner2_section py-5">
+    <div class="container">
+      <div class="row">
+        {{!-- left side --}}
+        <div class="col-md-6 text-center py-5">
+          <h3>Growing Gardens, Growing Joy</h3>
+          <p>Whether you're starting from scratch or looking to revitalize your existing garden,
+            our website is here to help you achieve your vision. We offer a wide range of resources and
+            tools to make the gardening process easy and enjoyable, from expert advice on soil preparation to a variety
+            of high-quality seeds and plants. With our help, your garden will thrive, and so will your happiness</p>
+          <button class="btn btn-primary"><a style="text-decoration: none; color:white;"
+              href="/gallery">View</a></button>
+        </div>
+        {{!-- right side --}}
+        <div class="col-md-6 text-center py-2">
+          <img src="/static/images/grass4.svg" class="img-fluid" style="max-height: 350px;" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  {{!-- banner3 section --}}
+
+  <section class="banner3_section py-5">
+    <div class="container">
+      <div class="row">
+        {{!-- left side --}}
+        <div class="col-md-6 text-center py-2">
+          <img src="/static/images/graphic2.svg" class="img-fluid" style="max-height: 350px;" alt="">
+        </div>
+        {{!-- right side --}}
+        <div class="col-md-6 text-center py-5">
+          <h3>Crafted with Care, Built to Last</h3>
+          <p>At our website, we believe that hard work and attention to detail are the keys to creating beautiful and
+            lasting gardens.
+            Our team of experts takes pride in every project we undertake, from carefully selecting the best materials
+            to meticulously
+            planning out every aspect of the design. We understand that your garden is a reflection of your personality
+            and values,
+            which is why we always go the extra mile to ensure that every detail is perfect. When you choose our
+            services,
+            you can be confident that your garden will not only look stunning but also stand the test of time.</p>
+          <button class="btn btn-primary"><a style="text-decoration: none; color:white;"
+              href="/#contact_us_section">Request a callback</a></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{!-- contact us section --}}
+
+  <section id="contact_us_section" class="py-5 background1">
+    <div class="container">
+      <h3 class="text-center text-secondary">Contact us</h3>
+      <div class="row">
+        <div class="col-md-12 text-centre">
+
+
+          <form action="/process-contact-form" method="post">
+
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Your email address</label>
+              <input name="email" type="email" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="contactNumberField" class="form-label">Your contact number</label>
+              <input name="phone" type="number" class="form-control" id="contactNumberField">
+            </div>
+
+            <div class="form-floating mt-2">
+              <textarea name="query" style="height: 150px;" class="form-control" placeholder="Enter your querry here"
+                id="querryField"></textarea>
+              <label for="querryField">Your Querry/ You can also ask for callback</label>
+            </div>
+
+
+            <div class="container text-center mt-2">
+              <button type="submit" class="btn btn-dark">Submit</button>
+            </div>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {{!-- about section --}}
+  <section id="about_section">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>About this site</h3>
+          <p>Welcome to our website! We are a team of passionate gardeners dedicated to helping people create beautiful
+            outdoor spaces that inspire and delight. Whether you're a seasoned gardener or just starting out, we are
+            here to provide you with the resources and support you need to turn your vision into reality. <br><br>
+
+            From designing and planning to planting and maintaining, our experts are here to guide you every step of the
+            way. We believe that gardening is not just a hobby but a way of life that promotes health, happiness, and a
+            deeper connection with nature. <br><br>
+
+            At our website, we are committed to delivering high-quality services and products that exceed your
+            expectations. We take pride in our work and always strive for excellence, no matter how big or small the
+            project. <br><br>
+
+            So, if you're ready to embark on a journey of discovery and creativity, we invite you to explore our website
+            and discover all that we have to offer. Let's work together to create a garden that you can be proud of and
+            enjoy for years to come.</p>
+          <button class="btn btn-success btn-lg"><a style="text-decoration: none; color:white;" href="/owner_detail">Know About Owner</a></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {{!-- footer section --}}
+  <footer class="footer background1 text-center py-3 mt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          &copy; 2021 Copyright: <span>{{details.brandName}}</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/c7d7d60662.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

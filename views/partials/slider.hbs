@@ -1,0 +1,25 @@
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+        {{#each slides}}
+    <button type="button"  data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="{{@index}}" class="{{this.preority}}" aria-current="true" aria-label="Slide 1"></button>
+  {{/each}}
+    {{#each slides}}
+    <div class="carousel-item {{this.preority}}">
+      <img src="{{this.imageUrl}}" class="d-block w-100 slider-image slider_beg" alt=" ">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>{{this.title}}</h1>
+        <p>{{this.subTitle}}</p>
+      </div>
+    </div>
+      {{/each}}
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
